@@ -5,7 +5,7 @@ const isDev = require('electron-is-dev');
 const server = "http://download.localhost:4000/api/versions";
 
 const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
-
+console.log(feed)
 const ws = require('windows-shortcuts');
 const ChronoTray = require('./app/chronotray')
 let mainWindow;
