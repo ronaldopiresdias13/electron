@@ -79,7 +79,7 @@ app.on('ready', () => {
         },
         skipTaskbar: true
     })
-    tray = new ChronoTray(`${__dirname}/icon3.ico`, mainWindow);
+    tray = new ChronoTray(`${__dirname}/icon2.ico`, mainWindow);
     mainWindow.loadURL(`file://${__dirname}/index.html`);
     mainWindow.on('blur', () => {
         setTimeout(() => mainWindow.hide(), 200);
@@ -88,12 +88,12 @@ app.on('ready', () => {
         ws.create("%APPDATA%/Microsoft/Windows/Start Menu/Programs/Electron.lnk", process.execPath);
         app.setAppUserModelId(process.execPath);
     }
-    //if(isDev === false){
+    if(isDev === false){
       autoUpdater.setFeedURL(feed)
       setInterval(() => {
         autoUpdater.checkForUpdates()
-      }, 60000)
-    //}
+      }, 30000)
+    }
     
 })
 
